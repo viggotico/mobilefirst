@@ -1,0 +1,386 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg-color: #272727;
+}
+
+
+body {
+    background-color: #272727;
+}
+
+/* ---KONTAKT START---*/
+
+/*wrap*/
+.ko-form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*content*/
+.ko-container {
+  max-width: 60%;
+  margin: 6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  padding: 1rem;
+  height: 33rem;
+}
+
+
+.ko-container::after {
+  position: relative;
+  content: "";
+  width: 10rem;
+  height: 30rem;
+  background-color: red;
+  bottom: -2rem;
+  left: -2rem;
+  z-index: -1;
+}
+
+.ko-form-box {
+  flex: 1;
+  padding: 20px;
+  max-width: 100%; 
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ko-form-box h2 {
+  margin-bottom: 1rem;
+}
+
+.ko-form-box p {
+  margin-bottom: 1rem;
+}
+
+.ko-form-box a {
+  color: red;
+}
+
+.ko-form-group input,
+.ko-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ko-form-group button {
+  width: 20%;
+  background-color: red;
+  color: white;
+}
+
+.ko-form-group label {
+  text-decoration: underline red;
+}
+
+.ko-image-box-kontakt img {
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-top: 15px; 
+  border: #000 solid 3px;
+  border-radius: 10px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  background-color: var(--bg-color);
+  padding: 30px;
+  color: white;
+  z-index: 100;
+}
+
+.deltabox {
+  height: 3.5rem;
+      width: auto;
+      position: absolute;
+      left: 15px;
+      top: 2%
+      
+}
+.menu-icon {
+  cursor: pointer;
+  display: block;
+  justify-content: right;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  
+}
+
+.menu-list li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+
+.menu-element:after {
+  content: '';
+  display: flex;
+  border-bottom: solid 2px red;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.menu-element:hover:after {
+  transform: scaleX(1);
+}
+
+
+.menu-list.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+  text-align: center;
+  animation-name: menuShow;
+  animation-duration: 0.8s;
+  float: left;
+}
+
+.menu-list.show li {
+  padding: 1rem 0;
+}
+
+@keyframes menuShow {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 70px;
+  }
+}
+  
+
+/* Footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.footer-content {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  z-index: -10;
+}
+.footer-links a {
+  color: #fff;
+  padding: 0.5rem;
+}
+.footer-links a:hover {
+  color: red;
+}
+.footer-image {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-image img {
+  height: 10rem;
+  width: auto;
+}  
+
+
+/* Media query til desktop */
+@media only screen and (min-width: 768px) {
+ 
+  /* Skjul burgerikonet */
+  .menu-icon {
+    display: none;
+  }
+
+  /* Juster navbar-layout til større skærme */
+  .navbar {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+  }
+
+  /* Juster menu-list til større skærme */
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+ 
+  .menu-list li {
+    margin: 0;
+  }
+
+ 
+  .menu-list li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  /* Vis menuen på større skærme, når klassen .show er tilføjet */
+  .menu-list.show {
+    display: flex;
+  
+  }
+
+  .footer-links {
+    display: flex;
+    z-index: 1;
+  }
+
+  .ko-container {
+    min-width: 60rem;
+     background-color: none;
+    margin: 3rem 2rem 3rem 10rem;
+     display: flex;
+     justify-content: space-between;
+     background-color: #272727;
+     padding: 1rem;
+     height: 100%;
+    
+   }
+
+   .ko-container::before {
+    position: relative;
+    content: "";
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    left: 44rem;
+    top: -2.5rem;
+    z-index: -10;
+   }
+
+   .ko-container::after {
+    position: relative;
+    content: "";
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    left: -3rem;
+    bottom: -2.7rem;
+    z-index: -1;
+   }
+   
+   .ko-form-box {
+     flex: 1;
+     padding: 20px;
+   }
+
+   .ko-form-box a {
+    color: white;
+   }
+
+   .ko-form-box a:hover {
+    color: red;
+   }
+
+   .ko-form-box p {
+    color: white;
+    margin-bottom: 1rem;
+   }
+   
+   .ko-form-box h2 {
+     text-decoration: underline red; 
+     color: white;
+     margin-bottom: 1rem;
+   }
+   
+   .ko-form-group {
+     margin-bottom: 20px;
+   }
+   
+   .ko-form-group label {
+     font-weight: bold;
+     display: block;
+     color: white;
+   }
+   
+   .ko-form-group input, .ko-form-group textarea {
+     width: 844px;
+     padding: 10px;
+     border: 3px solid white;
+     border-radius: 5px;
+   }
+   
+   .ko-form-group textarea {
+     height: 100px;
+   }
+   
+   .ko-form-group button {
+     background-color: red;
+     color: black;
+     font-weight: bold;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .ko-form-group button:hover {
+     background-color: red;
+     transition: 0.5s;
+     color: black;
+   }
+   
+   #message {
+     resize: none;
+   }
+   
+   .ko-image-box-kontakt img {
+     max-width: 100%;
+     height: 500px;
+     width: 500px;
+     margin-left: 200px;
+     margin-top: 35px;
+     border: #000 solid 3px;
+     border-radius: 10px;
+   }
+
+}
+
