@@ -1,0 +1,139 @@
+:root {
+  --bg-color: #272727;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Opdateret til space-between for at placere elementerne i begge ender */
+  background-color: var(--bg-color);
+  padding: 30px;
+  color: white;
+}
+
+.deltabox {
+  height: 3.5rem; /* Just an example height for the logo */
+      width: auto;
+      position: absolute;
+      left: 15px; /* Adjust as needed */
+      top: 2%
+      
+}
+.menu-icon {
+  cursor: pointer;
+  display: block;
+  justify-content: right;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  
+}
+
+.menu-list li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+
+.menu-element:after {
+  content: '';
+  display: flex;
+  border-bottom: solid 2px red;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.menu-element:hover:after {
+  transform: scaleX(1);
+}
+
+/* Vis menuen på større skærme, når klassen .show er tilføjet */
+.menu-list.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+  text-align: center;
+  animation-name: menuShow;
+  animation-duration: 1s;
+  z-index: -10;
+}
+
+.menu-list.show li {
+  padding: 1rem 0;
+}
+
+@keyframes menuShow {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 70px;
+  }
+}
+
+
+/* Media query for skærmbredder fra 768px til 1024px (tablet-størrelse) */
+@media only screen and (min-width: 768px) {
+  /* Skjul burgerikonet */
+  .menu-icon {
+    display: none;
+  }
+
+  /* Juster navbar-layout til større skærme */
+  .navbar {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+  }
+
+  /* Juster menu-list til større skærme */
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Fjern margin fra menu-punkter på større skærme */
+  .menu-list li {
+    margin: 0;
+  }
+
+  /* Tilføj margin mellem menu-punkter på større skærme */
+  .menu-list li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  /* Vis menuen på større skærme, når klassen .show er tilføjet */
+  .menu-list.show {
+    display: flex;
+  }
+}
