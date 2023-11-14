@@ -1,110 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>FAQ-deltabox</title>
-</head>
-<body>
-  <div> <img class="deltabox" src="img/box_transparent.gif" alt="logo"></div>
-    <div class="navbar">
-        <div class="menu-icon" id="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class="menu-list" id="menu-list">
-            <li><a class="menu-element" href="#">Forside</a></li>
-            <li><a class="menu-element" href="#">Cases</a></li>
-            <li><a class="menu-element" href="#">Ydelser</a></li>
-            <li><a class="menu-element" href="#">Om deltabox</a></li>
-            <li><a class="menu-element" href="#">Kontakt</a></li>
-        </ul>
-    </div>
-    <h1 id="F-overskrift">FAQ</h1>
-    <article>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="question">Hvad er deltabox?</div>
-                <div class="answer">deltabox er et kreativ Brand, som er altid skrives med små bogstaver. 
-                    deltaboxs formål er at skabe enestående visuelle oplevelser, der opfylder dine mål og idéer.
-                </div>
-            </div>
-    
-            <div class="faq-item">
-                <div class="question">Hvad er din pris?</div>
-                <div class="answer">Den endelige pris afhænger af mange faktorer såsom projektets kompleksitet, antallet af steder og datoen for handling.
-                     Kontakt os for at høre mere om prisen for dit projekt</div>
-            </div>
-    
-            <div class="faq-item">
-                <div class="question">Hvilke services vi tilbyder?</div>
-                <div class="answer">Vi leverer video, billeder, fotos, visuelle effekter (VFX), logoer, bevægelsesgrafik og mere. 
-                    Vores primære fokus er at skabe videoer til underholdnings- og modeindustrien, samt for kommende kunstnere og virksomheder</div>
-            </div>
-            <div class="faq-item">
-                <div class="question">Hvornår får man det færdige produkt?</div>
-                <div class="answer">Inden for 14 dage for videoer. Normalt inden for 48 timer for stillbilleder/fotografier.
-                    Komplekse eller lange videoer kan tage mere end 14 dage. 
-                    Hvis vi er optagede, kan det tage længere tid end sædvanligt, men vi kan altid diskutere deadline. </div>
-
-        </div>
-        <div class="faq-item">
-            <div class="question">Kan vi snakke om dit projekt i person?</div>
-            <div class="answer">Vi vil rigtig gerne møde dig i person, men ligesom vores deadlines, så skal det passe ind i vores kalender. 
-                Men du er altid velkommen til at kontake os på +45 31 87 91 47, eller sende os en mail på contact@deltabox.com </div>
-
-                <div class="faq-item">
-                    <div class="question">Arbejder i kun i Danmark?</div>
-                    <div class="answer">Vi kan godt arbejde sammen med mennesker rundt i verden.</div>
-    </article>
-    <script src="java.js"></script>
-</body>
-</html>
-
-/* General styles for FAQ siden*/
 .faq-container {
-  max-width: 850px;
-  margin: 50px auto;
-  background-color: #202020;
-  padding: 20px;
-  
-}
-#F-overskrift{
-  text-align: center;
-  color: #fff;
-}
-.faq-item {
-  margin-bottom: 20px;
-}
-
-.question {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: white;
-  margin-top: 5px;
-}
-
-.answer {
-  font-size: 1rem;
-  margin-top: 15px;
-  color: white
-}
-Dette er til Media Querry
-  .faq-container {
     max-width: 850px;
     margin: 50px auto;
     background-color: #202020;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  }
+    
+    }
+    #F-overskrift{
+    text-align: center;
+    color: #fff;
+    }
+    .faq-item {
+    margin-bottom: 20px;
+    }
+    
+    .question {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+    }
+    
+    .answer {
+    font-size: 1rem;
+    margin-top: 15px;
+    color: white
+    }
+@media screen and (min-width: 768px) {
+    .faq-container {
+        max-width: 850px;
+        margin: 50px auto;
+        background-color: #202020;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      }
 
-
-
-
+    .faq-container::before {
+        position: absolute;
+        content: "";
+        width: 15rem;
+        height: 17rem;
+        background-color: red;
+        right: 31rem;
+        top: 14rem;
+        z-index: -1;
+    }
+    .faq-container::after {
+        position: absolute;
+        content: "";
+        width: 15rem;
+        height: 17rem;
+        background-color: red;
+        left: 30.5rem;
+        bottom: 8.5rem;
+        z-index: -1;
+    }
+}
+  
 
 
 
