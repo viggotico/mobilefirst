@@ -1,0 +1,52 @@
+a {
+    color: white;
+}
+
+/* General styles for the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styles for the content within the footer */
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack items in a column for mobile */
+    align-items: center; /* Center items horizontally */
+}
+
+.contact-info {
+    text-align: center; /* Center align contact info */
+}
+
+.footer-links {
+    margin-top: 10px; /* Space between contact info and links */
+}
+
+.footer-links a {
+    display: block; /* Stack links vertically */
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.footer-image {
+    text-align: center; /* Center align the image */
+    margin-top: 10px; /* Space between links and image */
+}
+
+.footer-image img {
+    width: 7rem; /* Responsive image */
+    height: auto;
+}
+
+@media screen and (min-width: 786px) {
+    /* Styles for the content within the footer */
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row; /* Stack items in a row for desktop */
+    }
+}
