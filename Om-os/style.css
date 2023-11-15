@@ -1,0 +1,344 @@
+:root {
+    --bg-color: #272727;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+  }
+  
+  /* Navbar start */
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Opdateret til space-between for at placere elementerne i begge ender */
+    background-color: var(--bg-color);
+    padding: 30px;
+    color: white;
+  }
+  
+  .deltabox {
+    height: 3.5rem; /* Just an example height for the logo */
+        width: auto;
+        position: absolute;
+        left: 15px; /* Adjust as needed */
+        top: 2%
+        
+  }
+  .menu-icon {
+    cursor: pointer;
+    display: block;
+    justify-content: right;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  
+  .menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    
+  }
+  
+  .menu-list li {
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .menu-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+  }
+  
+  
+  .menu-element:after {
+    content: '';
+    display: flex;
+    border-bottom: solid 2px red;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  .menu-element:hover:after {
+    transform: scaleX(1);
+  }
+  
+  /* Vis menuen på større skærme, når klassen .show er tilføjet */
+  .menu-list.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: var(--bg-color);
+    width: 100%;
+    text-align: center;
+    animation-name: menuShow;
+    animation-duration: 1s;
+    z-index: -10;
+  }
+  
+  .menu-list.show li {
+    padding: 1rem 0;
+  }
+
+  @keyframes menuShow {
+    from {
+      top: -300px;
+    }
+  
+    to {
+      top: 70px;
+    }
+  }
+
+  /* Navbar slut /*
+
+  /*Om os side start /*
+
+/* Content start */
+
+.card_overview_om h3 {
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline red;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.om-logo-container {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+  }
+  
+  .om-logo-container img {
+    max-width: 5rem; /* Sæt en maksimal bredde efter behov */
+    margin: 10px 10px;
+    box-sizing: border-box;
+  }
+
+  .info_container_om {
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  .card_overview_om {
+    width: 100%;
+    font-size: 18px;
+    margin-top: -20px; 
+    padding: 1rem;   
+  }
+
+.card_overview_om p {
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    line-height: 2.5rem;
+}
+
+  .card_overview_om img {
+    max-width: 250px;
+    width: 100%;
+    margin-top: 2rem;
+    height: 100%;
+    max-height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin-left: 5rem;
+  }
+ 
+  .sponser-overskrift {
+    color: #fff;
+    text-align: center;
+    text-decoration: underline red;
+    padding-bottom: 1rem;
+  }
+
+
+/* Content slut */
+
+  /* Footer start */
+
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color: #333;
+  }
+  
+  .contact-info {
+    text-align: left; 
+    color: white;
+  }
+
+  .content-info a {
+    color: #fff;
+  }
+
+  .contact-info p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  .footer-links {
+    margin-top: 10px; 
+  }
+  
+  .footer-links a {
+    display: block; 
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;  
+  }
+  
+  .footer-links a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+  .footer-image {
+    text-align: center; 
+    margin-top: 10px; 
+  }
+  
+  .footer-image img {
+    width: 7rem; 
+    height: auto;
+  }
+
+  /* Footer slut */
+  
+  
+  
+  /* Responsive start */
+
+  @media only screen and (min-width: 768px) {
+   
+    /* Navbar responsive start */
+    .menu-icon {
+      display: none;
+    }
+  
+    /* Juster navbar-layout til større skærme */
+    .navbar {
+      display: flex;
+      align-items: right;
+      justify-content: flex-end;
+    }
+  
+    /* Juster menu-list til større skærme */
+    .menu-list {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    /* Fjern margin fra menu-punkter på større skærme */
+    .menu-list li {
+      margin: 0;
+    }
+  
+    /* Tilføj margin mellem menu-punkter på større skærme */
+    .menu-list li:not(:last-child) {
+      margin-right: 20px;
+    }
+  
+    /* Vis menuen på større skærme, når klassen .show er tilføjet */
+    .menu-list.show {
+      display: flex;
+    }
+/* Navbar responsive slut */
+
+/* Content sstart */
+
+.card_overview_om h3 {
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline red;
+    font-size: 2rem;
+    text-align: left;
+}
+
+.om-logo-container {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+  }
+  
+  .om-logo-container img {
+    max-width: 5rem; /* Sæt en maksimal bredde efter behov */
+    margin: 10px 10px;
+    box-sizing: border-box;
+  }
+
+  .info_container_om {
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+  }
+  .card_overview_om {
+    width: 50%;
+    font-size: 18px;
+    margin-top: -20px; 
+    margin-left: 8rem;   
+  }
+
+.card_overview_om p {
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    line-height: 2.5rem;
+}
+
+  .card_overview_om img {
+    max-width: 250px;
+    width: 100%;
+    margin-top: 7rem;
+    height: 100%;
+    max-height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin-left: 10rem;
+  }
+ 
+  .sponser-overskrift {
+    color: #fff;
+    text-align: center;
+    text-decoration: underline red;
+    padding-bottom: 1rem;
+  }
+    /* Content slut */
+
+
+
+    /* Footer responsive Start */
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row; 
+    }
+    /* Footer responsive Slut */
+  }
+
+  /* Responsive slut */
+
+  /* Om os side slut */
