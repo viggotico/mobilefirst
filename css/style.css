@@ -29,6 +29,10 @@ body {
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
+a{
+  color: var(--text-color);
+}
+
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -520,14 +524,15 @@ footer {
   flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   background-color: #202020;
-  margin: 60px 60px 60px 60px;
+  margin: 0;
   
 
 }
 .box-container, .box-container1, .box-container2{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -544,9 +549,8 @@ color: #202020;
   justify-content: start;
   flex-direction: column;
   padding: 25px;
-  width: 90%;
   
-  
+  align-items: center;
 }
 
 .box h2 {
@@ -710,7 +714,7 @@ color: #202020;
 }
 
 
-/* Media query for skærmbredder fra 768px til 1024px (tablet-størrelse) */
+/* Media query for skærmbredder fra 1200px til 1024px (tablet-størrelse) */
 @media only screen and (min-width: 1024px) {
   /* Skjul burgerikonet */
   .menu-icon {
@@ -787,7 +791,10 @@ color: #202020;
   margin-top: 2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
+  .cases{
+    margin: 60px 60px 60px 60px;
+  }
   .ptp-overskrift {
     display: flex;
     flex-direction: row;
@@ -944,6 +951,19 @@ h1 {
   height: 100%;
 }
 
+.video-wrapper-cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 25rem;
+  height: 15rem;
+}
+
+.video-wrapper-cases video {
+  max-width: 30rem;
+}
+
 #header-video {
   position: absolute;
   z-index: -9;
@@ -957,6 +977,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 var(--site-spacing);
 }
 
 .nav-forside ul li {
@@ -1031,6 +1052,15 @@ h1 {
     overflow: hidden;
     background-color: black;
     z-index: -10;
+  }
+
+  .video-wrapper-cases {
+    width: 100%;
+    height: 15rem;
+  }
+  
+  .video-wrapper-cases video {
+    max-width: 30rem;
   }
 
   .header-logo {
@@ -1222,16 +1252,17 @@ h1 {
 }
 
 
-/* Media query for skærmbredder fra 768px til 1024px (tablet-størrelse) */
-@media only screen and (min-width: 768px) {
+/* Media query for skærmbredder fra 1200px til 1024px (tablet-størrelse) */
+@media only screen and (min-width: 1200px) {
   .box-container, .box-container1, .box-container2 {
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
   .box {
     width: calc(50% - 15rem); 
   }
-
+  
   .box-container1 .box,
   .box-container2 .box {
     margin-top: 0; 
